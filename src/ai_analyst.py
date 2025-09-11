@@ -1,7 +1,7 @@
 import anthropic
 import json
 
-claude_api_key = "CLAUDE_API_KEY"  # Replace with your actual Claude API key
+claude_api_key = ""  # Replace with your actual Claude API key
 client = anthropic.Client(api_key=claude_api_key)
 
 def analyze_policy(policy_name, policy_doc):

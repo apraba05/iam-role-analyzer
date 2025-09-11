@@ -1,6 +1,6 @@
 import typer
 from aws_cli import get_role_policies
-from ai_analyst import analyze_policies
+from ai_analyst import analyze_policy
 from rich import print
 
 app = typer.Typer()
@@ -15,8 +15,8 @@ def scan_role(role_name: str):
     all_recommendations = []
 
     for name, doc in policies.items():
-        result = analyze_policies(name, doc)
-        all_scores.append(result['score'])
+        result = analyze_policy(name, doc)
+        all_scores.append(result['risk_score'])
         all_findings.extend(result['risks'])
         all_recommendations.extend(result['recommendations'])
 
